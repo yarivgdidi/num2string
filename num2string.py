@@ -65,9 +65,12 @@ def main():
         if (len(inputNum) < 4 ):
             print(threeDigits(*number[3:]))
         else:
+            separator = ' '
             if (inputNum[3:] == '000'):
                 print(thousands(*number[0:3]))
             else:
-                print(thousands(*number[0:3]) + ' ו' + threeDigits(*number[3:]))
+                if (number[2] == 0):
+                    separator = ' ו'
+                print(thousands(*number[0:3]) + separator + threeDigits(*number[3:]))
 
 main()
